@@ -5,6 +5,8 @@ file(GLOB srces
      "src/*.cpp"
      "src/resource/stb/*.h"
      "src/resource/stb/*.cpp"
+     "src/glm/*/*.*"
+     "src/glm/*.*"
 )
 add_executable(test ${srces})
 set_target_properties(test PROPERTIES CXX_STANDARD 17)
@@ -17,4 +19,4 @@ target_link_directories(test PRIVATE
                            "${PROJECT_BINARY_DIR}/libs/GLFW/lib-x86_64"
                            "${PROJECT_BINARY_DIR}/libs/GLEW/lib"
                            )
-target_link_libraries(test glfw3 GLEW "-framework Cocoa" "-framework IOKit" "-framework CoreVideo" "-framework OpenGL")
+target_link_libraries(test glfw3 GLEW "-fsanitize=address" "-framework Cocoa" "-framework IOKit" "-framework CoreVideo" "-framework OpenGL")
