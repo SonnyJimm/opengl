@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/Users/alpha/Documents/project/Opengltest",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/alpha/Documents/project/Opengltest/libs/GLFW/include -I/Users/alpha/Documents/project/Opengltest/libs/GLEW/include -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/test.dir/src/Assertion.cpp.o -c /Users/alpha/Documents/project/Opengltest/src/Assertion.cpp",
+  "file": "/Users/alpha/Documents/project/Opengltest/src/Assertion.cpp",
+  "output": "CMakeFiles/test.dir/src/Assertion.cpp.o"
+},
+{
+  "directory": "/Users/alpha/Documents/project/Opengltest",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/alpha/Documents/project/Opengltest/libs/GLFW/include -I/Users/alpha/Documents/project/Opengltest/libs/GLEW/include -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/test.dir/src/IndexBuffer.cpp.o -c /Users/alpha/Documents/project/Opengltest/src/IndexBuffer.cpp",
+  "file": "/Users/alpha/Documents/project/Opengltest/src/IndexBuffer.cpp",
+  "output": "CMakeFiles/test.dir/src/IndexBuffer.cpp.o"
+},
+{
+  "directory": "/Users/alpha/Documents/project/Opengltest",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/alpha/Documents/project/Opengltest/libs/GLFW/include -I/Users/alpha/Documents/project/Opengltest/libs/GLEW/include -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/test.dir/src/Render.cpp.o -c /Users/alpha/Documents/project/Opengltest/src/Render.cpp",
+  "file": "/Users/alpha/Documents/project/Opengltest/src/Render.cpp",
+  "output": "CMakeFiles/test.dir/src/Render.cpp.o"
+},
+{
+  "directory": "/Users/alpha/Documents/project/Opengltest",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/alpha/Documents/project/Opengltest/libs/GLFW/include -I/Users/alpha/Documents/project/Opengltest/libs/GLEW/include -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/test.dir/src/Shader.cpp.o -c /Users/alpha/Documents/project/Opengltest/src/Shader.cpp",
+  "file": "/Users/alpha/Documents/project/Opengltest/src/Shader.cpp",
+  "output": "CMakeFiles/test.dir/src/Shader.cpp.o"
+},
+{
+  "directory": "/Users/alpha/Documents/project/Opengltest",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/alpha/Documents/project/Opengltest/libs/GLFW/include -I/Users/alpha/Documents/project/Opengltest/libs/GLEW/include -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/test.dir/src/Texture.cpp.o -c /Users/alpha/Documents/project/Opengltest/src/Texture.cpp",
+  "file": "/Users/alpha/Documents/project/Opengltest/src/Texture.cpp",
+  "output": "CMakeFiles/test.dir/src/Texture.cpp.o"
+},
+{
+  "directory": "/Users/alpha/Documents/project/Opengltest",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/alpha/Documents/project/Opengltest/libs/GLFW/include -I/Users/alpha/Documents/project/Opengltest/libs/GLEW/include -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/test.dir/src/VertexArray.cpp.o -c /Users/alpha/Documents/project/Opengltest/src/VertexArray.cpp",
+  "file": "/Users/alpha/Documents/project/Opengltest/src/VertexArray.cpp",
+  "output": "CMakeFiles/test.dir/src/VertexArray.cpp.o"
+},
+{
+  "directory": "/Users/alpha/Documents/project/Opengltest",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/alpha/Documents/project/Opengltest/libs/GLFW/include -I/Users/alpha/Documents/project/Opengltest/libs/GLEW/include -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/test.dir/src/VertexBuffer.cpp.o -c /Users/alpha/Documents/project/Opengltest/src/VertexBuffer.cpp",
+  "file": "/Users/alpha/Documents/project/Opengltest/src/VertexBuffer.cpp",
+  "output": "CMakeFiles/test.dir/src/VertexBuffer.cpp.o"
+},
+{
+  "directory": "/Users/alpha/Documents/project/Opengltest",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/alpha/Documents/project/Opengltest/libs/GLFW/include -I/Users/alpha/Documents/project/Opengltest/libs/GLEW/include -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/test.dir/src/main.cpp.o -c /Users/alpha/Documents/project/Opengltest/src/main.cpp",
+  "file": "/Users/alpha/Documents/project/Opengltest/src/main.cpp",
+  "output": "CMakeFiles/test.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/alpha/Documents/project/Opengltest",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/Users/alpha/Documents/project/Opengltest/libs/GLFW/include -I/Users/alpha/Documents/project/Opengltest/libs/GLEW/include -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -o CMakeFiles/test.dir/src/resource/stb/stb_image.cpp.o -c /Users/alpha/Documents/project/Opengltest/src/resource/stb/stb_image.cpp",
+  "file": "/Users/alpha/Documents/project/Opengltest/src/resource/stb/stb_image.cpp",
+  "output": "CMakeFiles/test.dir/src/resource/stb/stb_image.cpp.o"
+}
+]

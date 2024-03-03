@@ -8,11 +8,12 @@ file(GLOB srces
      "src/glm/*/*.*"
      "src/glm/*.*"
 )
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_executable(test ${srces})
 set_target_properties(test PROPERTIES CXX_STANDARD 17)
 
 target_include_directories(test PRIVATE
-                           "${PROJECT_BINARY_DIR}/libs/GLFW/include" 
+                           "${PROJECT_BINARY_DIR}/libs/GLFW/include"
                            "${PROJECT_BINARY_DIR}/libs/GLEW/include"
                            )
 target_link_directories(test PRIVATE
