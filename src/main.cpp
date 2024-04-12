@@ -1,5 +1,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <cstddef>
+#include <cstdlib>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -20,7 +22,6 @@
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
-
 // timing
 float deltaTime = 0.0f; // time between current frame and last frame
 float lastFrame = 0.0f;
@@ -107,7 +108,7 @@ int main(void) {
   glEnable(GL_DEPTH_TEST);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   std ::cout << glGetString(GL_VERSION) << std::endl;
-
+  // int pt[] = {1, 2, 3, 4, 5, 6};
   float positions[] = {
       0.5f,  0.5f,  0.5f,  0.0f, 0.0f, // 0
       -0.5f, 0.5f,  -0.5f, 0.0f, 1.0f, // 1
@@ -121,6 +122,8 @@ int main(void) {
   unsigned int indices[] = {0, 1, 2, 1, 3, 4, 5, 6, 3, 7, 3, 6,
                             2, 4, 7, 0, 7, 6, 0, 5, 1, 1, 5, 3,
                             5, 0, 6, 7, 4, 3, 2, 1, 4, 0, 2, 7};
+  // int a = 55;
+  // positions[a] = 12;
   VertexArray va;
   VertexBuffer vb(&positions, 5 * 8 * sizeof(float));
   VertexBufferLayout layout;
@@ -152,13 +155,31 @@ int main(void) {
   v.push_back(glm::vec3(1.5f, 2.0f, -2.5f));
   v.push_back(glm::vec3(1.5f, 0.2f, -1.5f));
   v.push_back(glm::vec3(-1.3f, 1.0f, -1.5f));
+  v.push_back(glm::vec3(0.0f, 0.0f, 0.0f));
+  v.push_back(glm::vec3(2.0f, 5.0f, -15.0f));
+  v.push_back(glm::vec3(-1.5f, -2.2f, -2.5f));
+  v.push_back(glm::vec3(-3.8f, -2.0f, -12.3f));
+  v.push_back(glm::vec3(2.4f, -0.4f, -3.5f));
+  v.push_back(glm::vec3(-1.7f, 3.0f, -7.5f));
+  v.push_back(glm::vec3(1.3f, -2.0f, -2.5f));
+  v.push_back(glm::vec3(1.5f, 2.0f, -2.5f));
+  v.push_back(glm::vec3(1.5f, 0.2f, -1.5f));
+  v.push_back(glm::vec3(-1.3f, 1.0f, -1.5f));
 
+  int fps = 0;
   float xRotation = 0.0f;
   float yRotation = 0.0f;
+  float last = static_cast<float>(glfwGetTime());
   while (!glfwWindowShouldClose(window)) {
+    fps++;
     renderer.Clear();
     float currentFrame = static_cast<float>(glfwGetTime());
     deltaTime = currentFrame - lastFrame;
+    if (currentFrame - last >= 1.0) {
+      std::cout << fps << std::endl;
+      last = currentFrame;
+      fps = 0;
+    }
     lastFrame = currentFrame;
     processInput(window);
     glm::mat4 projection;
