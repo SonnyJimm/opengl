@@ -5,7 +5,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <fstream>
 #include "IndexBuffer.h"
 #include "Render.h"
 #include "Shader.h"
@@ -13,7 +13,7 @@
 #include "VertexArray.h"
 #include "VertexBuffer.h"
 #include "VertexBufferLayout.h"
-
+#include <sstream>
 #include "resource/glm/glm.hpp"
 #include "resource/glm/gtc/matrix_transform.hpp"
 #include "resource/glm/gtc/type_ptr.hpp"
@@ -110,36 +110,40 @@ int main(void) {
   std ::cout << glGetString(GL_VERSION) << std::endl;
 
   float positions[] = {
-      0.5f,  0.5f,  1.5f,  0.0f, 0.0f, // 0
-      -0.5f, 0.5f,  -0.5f, 0.0f, 1.0f, // 1
-      -0.5f, 0.5f,  0.5f,  1.0f, 0.0f, // 2
-      0.5f,  -0.5f, -0.5f, 1.0f, 1.0f, // 3
-      -0.5f, -0.5f, -0.5f, 0.0f, 0.0f, // 4
-      0.5f,  0.5f,  -0.5f, 1.0f, 0.0f, // 5
-      0.5f,  -0.5f, 0.5f,  0.0f, 1.0f, // 6
-      -0.5f, -0.5f, 0.5f,  1.0f, 1.0f  // 7
+      0.5f,  0.5f,  1.5f,
+      -0.5f, 0.5f,  -0.5f,
+      -0.5f, 0.5f,  0.5f,
+      0.5f,  -0.5f, -0.5f,
+      -0.5f, -0.5f, -0.5f,
+      0.5f,  0.5f,  -0.5f,
+      0.5f,  -0.5f, 0.5f,
+      -0.5f, -0.5f, 0.5f,
   };
 
   unsigned int indices[] = {0, 1, 2, 1, 3, 4, 5, 6, 3, 7, 3, 6,
                             2, 4, 7, 0, 7, 6, 0, 5, 1, 1, 5, 3,
                             5, 0, 6, 7, 4, 3, 2, 1, 4, 0, 2, 7};
   std::vector<float> pos;
-  for(int i=0; i<40; i++){
-      pos.push_back(positions[i]);
+  std::ifstream stream("src/resource/sample/something.txt");
+  std::string line;
+  while (getline(stream, line)){
+      std::string coord;
+      std::stringstream ss(line);
+      while(getline(ss,coord, ' ')){
+          pos.push_back(std::stof(coord)/750.0f);
+          std::cout<<pos[pos.size()-1]<<std::endl;
+      }
   }
+        std::cout<<pos.size()<<std::endl;
   VertexArray va;
   VertexBuffer vb(pos.data(), pos.size() * sizeof(float));
   VertexBufferLayout layout;
-  layout.Push<float>(3);
-  layout.Push<float>(2);
+
   IndexBuffer ib(indices, 36);
   Shader shader("src/resource/shader/Basic.shader");
   shader.Bind();
+  layout.Push<float>(3);
   va.AddBuffer(vb, layout);
-
-  Texture texture("src/resource/asset/wall.jpg");
-  texture.Bind();
-  shader.SetUniform1i("u_Texture", 0);
   // shader.SetUniform4f("u_Color", 0.0f, 0.5f, 0.3f, 1.0f);
   shader.UnBind();
   va.UnBind();
@@ -148,9 +152,7 @@ int main(void) {
   Render renderer;
   std::vector<glm::vec3> v;
   v.push_back(glm::vec3(0.0f, 0.0f, 0.0f));
-  v.push_back(glm::vec3(2.0f, 5.0f, -15.0f));
-  v.push_back(glm::vec3(-1.5f, -2.2f, -2.5f));
-  v.push_back(glm::vec3(-3.8f, -2.0f, -12.3f));
+
 
   int fps = 0;
   float xRotation = 0.0f;

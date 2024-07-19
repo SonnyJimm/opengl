@@ -21,7 +21,8 @@ void Render::Draw(const IndexBuffer &ib, const VertexArray &va, const Shader &sh
     shader.Bind();
     va.Bind();
     ib.Bind();
-    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-    GLCall(glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, nullptr));
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    GLCall(glDrawArrays(GL_TRIANGLE_STRIP,0,243831));
+    // GLCall(glDrawElements(GL_LINE_STRIP, ib.GetCount(), GL_UNSIGNED_INT, nullptr));
 
 }

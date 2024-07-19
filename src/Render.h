@@ -11,5 +11,5 @@ public:
     ~Render();
     void Clear() const;
     void Draw(const IndexBuffer& ib,const VertexArray& va,const Shader& shader) const;
-    
+
 };
