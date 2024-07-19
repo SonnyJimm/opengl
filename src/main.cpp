@@ -108,9 +108,9 @@ int main(void) {
   glEnable(GL_DEPTH_TEST);
   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
   std ::cout << glGetString(GL_VERSION) << std::endl;
-  // int pt[] = {1, 2, 3, 4, 5, 6};
+
   float positions[] = {
-      0.5f,  0.5f,  0.5f,  0.0f, 0.0f, // 0
+      0.5f,  0.5f,  1.5f,  0.0f, 0.0f, // 0
       -0.5f, 0.5f,  -0.5f, 0.0f, 1.0f, // 1
       -0.5f, 0.5f,  0.5f,  1.0f, 0.0f, // 2
       0.5f,  -0.5f, -0.5f, 1.0f, 1.0f, // 3
@@ -119,13 +119,19 @@ int main(void) {
       0.5f,  -0.5f, 0.5f,  0.0f, 1.0f, // 6
       -0.5f, -0.5f, 0.5f,  1.0f, 1.0f  // 7
   };
+  std::vector<GLfloat> pos(40);
+  for(int i=0; i<40; i++){
+      pos[i]=positions[i];
+  }
   unsigned int indices[] = {0, 1, 2, 1, 3, 4, 5, 6, 3, 7, 3, 6,
                             2, 4, 7, 0, 7, 6, 0, 5, 1, 1, 5, 3,
                             5, 0, 6, 7, 4, 3, 2, 1, 4, 0, 2, 7};
   // int a = 55;
   // positions[a] = 12;
+  //
+
   VertexArray va;
-  VertexBuffer vb(&positions, 5 * 8 * sizeof(float));
+  VertexBuffer vb(pos.data(), pos.size() * sizeof(GLfloat));
   VertexBufferLayout layout;
   layout.Push<float>(3);
   layout.Push<float>(2);
@@ -149,22 +155,6 @@ int main(void) {
   v.push_back(glm::vec3(2.0f, 5.0f, -15.0f));
   v.push_back(glm::vec3(-1.5f, -2.2f, -2.5f));
   v.push_back(glm::vec3(-3.8f, -2.0f, -12.3f));
-  v.push_back(glm::vec3(2.4f, -0.4f, -3.5f));
-  v.push_back(glm::vec3(-1.7f, 3.0f, -7.5f));
-  v.push_back(glm::vec3(1.3f, -2.0f, -2.5f));
-  v.push_back(glm::vec3(1.5f, 2.0f, -2.5f));
-  v.push_back(glm::vec3(1.5f, 0.2f, -1.5f));
-  v.push_back(glm::vec3(-1.3f, 1.0f, -1.5f));
-  v.push_back(glm::vec3(0.0f, 0.0f, 0.0f));
-  v.push_back(glm::vec3(2.0f, 5.0f, -15.0f));
-  v.push_back(glm::vec3(-1.5f, -2.2f, -2.5f));
-  v.push_back(glm::vec3(-3.8f, -2.0f, -12.3f));
-  v.push_back(glm::vec3(2.4f, -0.4f, -3.5f));
-  v.push_back(glm::vec3(-1.7f, 3.0f, -7.5f));
-  v.push_back(glm::vec3(1.3f, -2.0f, -2.5f));
-  v.push_back(glm::vec3(1.5f, 2.0f, -2.5f));
-  v.push_back(glm::vec3(1.5f, 0.2f, -1.5f));
-  v.push_back(glm::vec3(-1.3f, 1.0f, -1.5f));
 
   int fps = 0;
   float xRotation = 0.0f;
