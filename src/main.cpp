@@ -119,19 +119,16 @@ int main(void) {
       0.5f,  -0.5f, 0.5f,  0.0f, 1.0f, // 6
       -0.5f, -0.5f, 0.5f,  1.0f, 1.0f  // 7
   };
-  std::vector<GLfloat> pos(40);
-  for(int i=0; i<40; i++){
-      pos[i]=positions[i];
-  }
+
   unsigned int indices[] = {0, 1, 2, 1, 3, 4, 5, 6, 3, 7, 3, 6,
                             2, 4, 7, 0, 7, 6, 0, 5, 1, 1, 5, 3,
                             5, 0, 6, 7, 4, 3, 2, 1, 4, 0, 2, 7};
-  // int a = 55;
-  // positions[a] = 12;
-  //
-
+  std::vector<float> pos;
+  for(int i=0; i<40; i++){
+      pos.push_back(positions[i]);
+  }
   VertexArray va;
-  VertexBuffer vb(pos.data(), pos.size() * sizeof(GLfloat));
+  VertexBuffer vb(pos.data(), pos.size() * sizeof(float));
   VertexBufferLayout layout;
   layout.Push<float>(3);
   layout.Push<float>(2);
@@ -141,7 +138,6 @@ int main(void) {
   va.AddBuffer(vb, layout);
 
   Texture texture("src/resource/asset/wall.jpg");
-  std::cout << "sometimes maybe not" << std::endl;
   texture.Bind();
   shader.SetUniform1i("u_Texture", 0);
   // shader.SetUniform4f("u_Color", 0.0f, 0.5f, 0.3f, 1.0f);
